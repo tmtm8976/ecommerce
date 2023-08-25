@@ -14,7 +14,17 @@ export const ProductDetails = () => {
         getProduct(id)
     }, [])
 
-  return (
-    <div>{JSON.stringify(product)}</div>
+  return (<>
+      <div>{JSON.stringify(product)}</div>
+      {product  && <div className='flex justify-center'>
+        <div className='relative w-1/3 h-[min(50vh,400px)] overflow-hidden rounded-md'>
+          {product.images.map(img=><img src={img} className='absolute top-0 left-0 h-full object-cover'/>)}
+        </div>
+        <div>
+          <h1>{product.title}</h1>
+          <p>{product.description}</p>
+        </div>
+      </div>}
+    </>
   )
 }
