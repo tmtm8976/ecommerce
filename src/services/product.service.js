@@ -7,3 +7,9 @@ export const getProducts = async () => {
     console.log("Get Products Finished");
     return products
 }
+
+export const getProductById  = async (id) => {
+    const axiosResponse = await productsInterceptor.get(`https://dummyjson.com/products/${id}`)
+    const product = axiosResponse.data
+    return product
+  }

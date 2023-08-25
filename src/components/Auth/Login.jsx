@@ -1,20 +1,31 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { login } from '../../services/authentication.service';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
+import { gState } from '../../context/Context';
 
 
 export default function Login() {
+    const navigate = useNavigate()
+    const {setData } = useContext(gState)
     const [userData, setUserData] = useState(null)
 
     const loginForm = useFormik({
         initialValues: {
-          username: "",
-          password: "",
+          username: "kminchelle",
+          password: "0lelplR",
         },
         onSubmit: async (formValues) => {
           const data = await login(formValues)
-          setUserData(data)
+          setData((prevState)=>{
+            return {
+              ...prevState,
+              isLoggedIn: true,
+              userData: data
+            }
+          })
+          navigate('/')
         },
         validationSchema: Yup.object().shape({
           username: Yup.string()
@@ -75,7 +86,7 @@ export default function Login() {
             <p className='p-5'>{userData.firstName}</p>
         </div>}
 
-        <img src="darkgrad.png" alt="" className='absolute -z-10 w-full h-full object-fit top-0'/>
+        {/* <img src="darkgrad.png" alt="" className='absolute -z-10 w-full h-full object-fit top-0'/> */}
     </div>
   )
 }
