@@ -8,6 +8,8 @@ export const login = async (loginData) => {
             }
         })
         console.log(response.data);
+        localStorage.setItem('isLoggedIn', true)
+        localStorage.setItem('userData', JSON.stringify(loginData))
         return response.data
     } catch (error) {
         if (error.response && error.response.status === 400) {
