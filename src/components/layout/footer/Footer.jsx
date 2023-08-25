@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom'
 export const Footer = () => {
   return (
     <footer className='p-10 bg-[#2e2e2e] flex justify-around text-white items-center flex-col'>
-        {/* <hr className='w-full pt-[0.5px] mb-5 border-0 bg-[#fe9900]' /> */}
         <div className='flex flex-col md:flex-row w-full justify-around'>
              <h3 className='w-100 font-semibold italic text-[#fe9900]'>TechStore</h3>
 

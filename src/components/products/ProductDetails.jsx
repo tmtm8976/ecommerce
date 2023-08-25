@@ -32,7 +32,7 @@ export const ProductDetails = () => {
       <div className='relative w-1/3 h-[min(50vh,400px)] rounded-md '>
       <Slider {...settings} >
     {product.images.map((img, index) => (
-      <div className='h-full overflow-hidden'><img key={index} src={img} className='h-full object-cover' /></div>
+      <div className='h-[300px] w-[300px] flex items-center justify-center overflow-hidden'><img key={index} src={img} className='h-full object-cover' /></div>
     ))}
   </Slider>
 </div>

@@ -21,18 +21,27 @@ export const Contact = () => {
   }
 
   return (
-    <div>
-      <h1>Contact Us</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" value={email} onChange={handleEmailChange} required />
+    <div className='w-full h-full'>
+    <div className='h-[50vh] w-full bg-[#2e2e2e] absolute top-0 rounded-3xl -z-10'></div>
+        <div className='h-[80vh] flex flex-col items-center justify-center'>
+        <div className='bg-white px-20 h-3/4 flex gap-10 items-center justify-center rounded-lg shadow-lg'>
+           
+          <form onSubmit={handleSubmit} className='flex flex-col gap-3 font-bold'>
+          <h1 className='text-[#fe9900] text-3xl mb-8'>Contact Us</h1>
+            <label htmlFor="email">Email</label>
+            <input type="email" className='border h-[40px]'  id="email" value={email} onChange={handleEmailChange} required />
 
-        <label htmlFor="message">Message:</label>
-        <textarea id="message" value={message} onChange={handleMessageChange} required></textarea>
+            <label htmlFor="message">Message</label>
+            <textarea  className='border h-[80px] resize-none' id="message" value={message} onChange={handleMessageChange} required></textarea>
 
-        <button type="submit">Send</button>
-      </form>
-      {isSent && <p>Message successfully sent!</p>}
+            <button type='submit' className='px-5 py-3 bg-[#fe9900] rounded-sm mt-8 shadow-md font-bold text-white hover:scale-105 hover:ease-in-out hover:transition-transform'>Send</button>
+            {isSent && <p className='text-green-500'>Message successfully sent!</p>}
+          </form>
+          <img src="mail.jpg" alt="" />
+      </div>
+        </div>
+        
     </div>
+    
   )
 }
