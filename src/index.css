@@ -7,3 +7,8 @@ body{
     background-color: white;
     font-family: 'Montserrat', sans-serif;
 }
+
+.slick-prev:before,
+.slick-next:before {
+  color: rgb(0, 0, 0)!important;
+}
