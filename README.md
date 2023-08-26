@@ -11,5 +11,6 @@
 
 ## Technologies
 - Reactjs
+- Tailwind CSS
 - Axios
 - Formik & Yup
