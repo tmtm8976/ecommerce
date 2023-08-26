@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Product from '../item/Product'
 import { getProducts } from '../../../services/product.service'
+import Loading from '../../UI/Loading';
 
 
 export default function Products() {
@@ -32,7 +33,8 @@ export default function Products() {
       <h1 className='m-10'>P R O D U C T S</h1>
     <div className='flex flex-wrap items-center justify-center w-[75%]'>
         <hr className='w-full pt-1 mb-5 border-0 bg-[#fe9900]' />
-        {products.map(p=><Product product={p}/>)}
+        {products && products.map(p=><Product product={p}/>)}
+        {!products && <Loading/>}
     </div>
     </div>
   )

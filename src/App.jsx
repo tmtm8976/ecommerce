@@ -9,6 +9,7 @@ import { ProductDetails } from "./components/products/ProductDetails";
 import { useContext, useEffect } from "react";
 import { gState } from "./context/Context";
 import { login } from "./services/authentication.service";
+import Loading from "./components/UI/Loading";
 
 function App() {
   const isLoggedIn = localStorage.getItem('isLoggedIn')
